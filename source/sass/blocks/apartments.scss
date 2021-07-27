@@ -1,0 +1,49 @@
+.apartments {
+  &__header { 
+    font-size: 54px;
+    line-height: 55px;
+    font-weight: bold;
+  }
+
+  &__item-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 25px 10px 23px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  &__item {
+    width: 52.6vw;
+    margin-bottom: 3px;
+  }
+
+  &__item-name {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__item-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+  }
+
+  &__area,
+  &__floor-number,
+  &__price {
+    font-weight: 600;
+  }
+
+  &__area,
+  &__floors,
+  &__price {
+    margin-right: 20px;
+  }
+
+  &__floors {
+    opacity: 0.5;
+    margin-left: 5px;
+  }
+}

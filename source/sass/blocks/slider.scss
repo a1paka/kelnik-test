@@ -1,0 +1,30 @@
+.slider {
+  width: 318px;
+  height: 318px;
+  background: linear-gradient(135deg, rgba(174, 228, 178, 0.3) 0%, rgba(149, 208, 161, 0.3) 100%);
+  border-radius: 10px;
+
+  &__wrapper {
+    padding: 20px 19px 27px 19px;
+  }
+
+  &__buttons {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 100px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-right: 13px;
+    padding: 0;
+
+    &:active {
+      color: #FFFFFF;
+      background: #3EB57C;
+      box-shadow: 0px 6px 20px #95D0A1;
+      border-radius: 200px;
+    }
+  }
+}
