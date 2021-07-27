@@ -47,3 +47,28 @@
     margin-left: 5px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .apartments {
+    width: 801px;
+
+    &__item {
+      box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    &__item-wrapper {
+      border: none;
+      padding: 16px 25px 10px 0;
+    }
+
+    &__item-pic {
+      width: 80px;
+      order: 1;
+    }
+
+    &__item-description {
+      display: block;
+      order: 2;
+    }
+  }
+}

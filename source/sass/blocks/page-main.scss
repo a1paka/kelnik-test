@@ -6,3 +6,12 @@
     padding: 48px 54px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .page-main {
+    &__container {
+      margin: 0 auto;
+      padding: 96px 80px;
+    }
+  }
+}

@@ -1,13 +1,54 @@
 .filter {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   margin-top: 31px;
   margin-bottom: 13px;
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
   
   &__item {
     display: flex;
     flex-direction: row;
-    margin-right: 20px;
+    margin-right: 17px;
+  }
+
+  &__apartment {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .filter {
+    display: flex;
+    flex-direction: row;
+    margin-top: 47px;
+    margin-bottom: 0;
+    padding-bottom: 17px;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+
+    &__apartment {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__layout {
+      width: 80px;
+      margin-right: 20px;
+      padding: 0;
+    }
+
+    &__flat {
+      width: 281px;
+      padding: 0;
+      margin-right: 19px;
+    }
+
+    &__item {
+      width: 140px;
+      margin: 0;
+      padding: 0;
+    }
   }
 }
