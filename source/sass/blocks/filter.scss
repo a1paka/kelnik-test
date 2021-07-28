@@ -1,6 +1,6 @@
 .filter {
-  margin-top: 31px;
-  margin-bottom: 13px;
+  margin: 31px 0 13px 0;
+  padding: 0;
 
   &__info {
     display: flex;
@@ -12,6 +12,52 @@
     display: flex;
     flex-direction: row;
     margin-right: 17px;
+  }
+
+  &__name {
+    cursor: pointer;
+
+    &:hover {
+      color: #b4e2cc;
+    }
+
+    &:active {
+      color: $second-color;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 6px 5px 0 7px;
+  }
+
+  &__arrow {
+    background-color: #fff;
+    width: 5px;
+    height: 5px;
+    border-top: solid #E2E2E2;
+    border-right: solid #E2E2E2;
+    border-radius: 15%;
+    cursor: pointer;
+
+    &:hover {
+      border-top: solid #b4e2cc;
+      border-right: solid #b4e2cc;
+    }
+
+    &:active {
+      border-top: solid $second-color;
+      border-right: solid $second-color;
+    }
+
+    &--up {
+      transform: rotate(-45deg);
+    }
+
+    &--down {
+      transform: rotate(135deg);
+    }
   }
 
   &__apartment {
@@ -26,7 +72,7 @@
     margin-top: 47px;
     margin-bottom: 0;
     padding-bottom: 17px;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
     &__apartment {
       display: flex;
