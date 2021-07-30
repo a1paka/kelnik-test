@@ -124,12 +124,6 @@
       margin-right: 14px;
     }
 
-    &__floors,
-    &__floors-text {
-      display: flex;
-      flex-direction: row;
-    }
-
     &__floor-number {
       font-size: 14px;
       line-height: 20px;
@@ -137,6 +131,8 @@
     }
 
     &__floors-text {
+      display: flex;
+      flex-direction: row;
       font-size: 14px;
       line-height: 20px;
       font-weight: 400;
@@ -144,6 +140,8 @@
     }
 
     &__floors {
+      display: flex;
+      flex-direction: row;
       width: auto;
       margin-right: 21px;
     }

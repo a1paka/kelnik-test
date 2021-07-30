@@ -4,7 +4,6 @@ const scrollToTop = document.querySelector(".page-main__scroll-top");
 const trackScroll = () => {
   let scrolled = window.pageYOffset;
   let coords = document.documentElement.clientHeight;
-
   if (scrolled > coords) {
     scrollToTop.classList.add('page-main__scroll-top-show');
   }
@@ -19,5 +18,6 @@ const backToTop = () => {
     setTimeout(backToTop, 0);
   }
 }
+
 window.addEventListener('scroll', trackScroll);
 scrollToTop.addEventListener('click', backToTop);

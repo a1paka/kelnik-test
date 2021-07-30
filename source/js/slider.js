@@ -1,56 +1,56 @@
 'use strict'
-const sliderPrice = document.querySelector('.filters__price-slider');
-const sliderArea = document.querySelector('.filters__area-slider');
-const resetButton = document.querySelector('.filters__reset');
 
 document.addEventListener("DOMContentLoaded", () => {
-  noUiSlider.create(sliderPrice, {
-    start: [5500000, 18900000],
-    step: 100000,
-    range: {
-      'min': 0,
-      'max': 30000000
-    }
-  });
-
+  const sliderPriceElem = document.querySelector('.filters__price-slider');
+  const sliderAreaElem = document.querySelector('.filters__area-slider')
+  const resetButton = document.querySelector('.filters__reset');
   const sliders = [
     {
-      elem: sliderPrice,
-      fromElem: sliderPrice.parentElement.querySelector(".filters__from-value"),
-      toElem: sliderPrice.parentElement.querySelector(".filters__to-value"),
+      elem: sliderPriceElem,
+      fromElem: sliderPriceElem.parentElement.querySelector(".filters__from-value"),
+      toElem: sliderPriceElem.parentElement.querySelector(".filters__to-value"),
+      range: [0, 30000000],
+      start: [5500000, 18900000],
+      step: 100000
+    }, 
+    {
+      elem: sliderAreaElem,
+      fromElem: sliderAreaElem.parentElement.querySelector(".filters__from-value"),
+      toElem: sliderAreaElem.parentElement.querySelector(".filters__to-value"),
+      range: [1, 200],
+      start: [33, 123],
+      step: 1
     }
   ];
+
+  for (const slider of sliders) {
+    noUiSlider.create(slider.elem, {
+      start: [slider.start[0], slider.start[1]],
+      connect: true,
+      step: slider.step,
+      range: {
+        "min": slider.range[0],
+        "max": slider.range[1]
+      }
+    });
+
+    slider.elem.noUiSlider.on("update", (values) => {
+      slider.fromElem.textContent = parseInt(values[0], 10);
+      slider.toElem.textContent = parseInt(values[1], 10);
+    });
+  }
+
+  resetButton.onclick = (e) => {
+    e.preventDefault();
+    sliderPriceElem.noUiSlider.reset();
+    sliderAreaElem.noUiSlider.reset();
+   };
   
-  for (const slider of sliders) {
-    slider.elem.noUiSlider.on("update", (values) => {
-      slider.fromElem.textContent = parseInt(values[0], 10);
-      slider.toElem.textContent = parseInt(values[1], 10);
-    });
-  }
-});
+  // При изменении состояния необходимо блокировать изменение фильтра и отправлять запрос на сервер. 
 
-document.addEventListener("DOMContentLoaded", () => {
-  noUiSlider.create(sliderArea, {
-    start: [33, 123],
-    step: 1,
-    range: {
-      'min': 1,
-      'max': 250
-    }
-  });
-
-  const sliders = [
-    {
-      elem: sliderArea,
-      fromElem: sliderArea.parentElement.querySelector(".filters__from-value"),
-      toElem: sliderArea.parentElement.querySelector(".filters__to-value"),
-    }
-  ];
-
-  for (const slider of sliders) {
-    slider.elem.noUiSlider.on("update", (values) => {
-      slider.fromElem.textContent = parseInt(values[0], 10);
-      slider.toElem.textContent = parseInt(values[1], 10);
-    });
-  }
+  // если ползунок меняет состояние -> изменения (ползунок) блокируются
+  //                      slider.step             sliderPriceElem.setAttribute('disabled', true);
+  //                                              sliderAreaElem.setAttribute('disabled', true);;
+  // отправляется запрос на сервер
+  // появляются нужные данные на странице (?)
 });
