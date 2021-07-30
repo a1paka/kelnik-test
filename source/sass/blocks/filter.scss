@@ -1,26 +1,47 @@
 .filter {
-  margin: 31px 0 13px 0;
-  padding: 0;
+  display: flex;
+  flex-direction: row;
+  margin-top: 47px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &__apartment {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__layout {
+    width: 80px;
+    margin-right: 20px;
+    padding: 0;
+  }
+
+  &__flat {
+    width: 281px;
+    margin-right: 20px;
+    padding: 0;
+  }
 
   &__info {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
   }
-  
+
   &__item {
     display: flex;
     flex-direction: row;
-    margin-right: 17px;
+    width: 120px;
+    margin-right: 20px;
   }
 
   &__name {
     cursor: pointer;
-
+    
     &:hover {
       color: #b4e2cc;
     }
-
+    
     &:active {
       color: $second-color;
     }
@@ -59,42 +80,34 @@
       transform: rotate(135deg);
     }
   }
-
-  &__apartment {
-    display: none;
-  }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: $tablet-width) and (max-width: 1439px) {
   .filter {
-    display: flex;
-    flex-direction: row;
-    margin-top: 47px;
-    margin-bottom: 0;
-    padding-bottom: 17px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 31px 0 13px 0;
+    padding: 0;
+    border: none;
 
     &__apartment {
-      display: flex;
-      flex-direction: row;
-    }
-
-    &__layout {
-      width: 80px;
-      margin-right: 20px;
-      padding: 0;
-    }
-
-    &__flat {
-      width: 281px;
-      padding: 0;
-      margin-right: 19px;
+      display: none;
     }
 
     &__item {
-      width: 140px;
-      margin: 0;
-      padding: 0;
+      width: auto;
+      margin-right: 17px;
+    }
+  }
+}
+
+@media (min-width: $mobile-width) and (max-width: 959px) {
+  .filter {
+    &__apartment {
+      display: none;
+    }
+
+    &__item {
+      width: auto;
+      margin-right: 17px;
     }
   }
 }

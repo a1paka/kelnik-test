@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./css/style.min.css" rel="stylesheet">
-  <link rel="preload" href="./fonts/PT-Root-UI_Regular.woff2" as="font">
-  <link rel="preload" href="./fonts/PT-Root-UI_Bold.woff2" as="font">
+  <link rel="preload" href="./fonts/PT-Root-UI_Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/PT-Root-UI_Bold.woff2" as="font" crossorigin="anonymous">
   <title>"Кельник Студиос" тестовое</title>
 </head>
 
@@ -56,9 +56,11 @@
               <div class="apartments__flat-description">
                 <h2 class="apartments__flat-name">3-комнатная №104</h2>
                 <div class="apartments__flat-info">
-                  <p class="apartments__area">63,1 <span class="apartments__area-m">м²</span></p>
-                  <p class="apartments__floor-number">1</p>
-                  <p class="apartments__floors">из 17 <span class="apartments__floors-text">этаж</span></p>
+                  <p class="apartments__area">63,1 м²</p>
+                  <p class="apartments__floors">
+                    <span class="apartments__floor-number">1</span>
+                    <span class="apartments__floors-text"> из 17 <span class="apartments__floor">этаж</span></span>
+                  </p>
                   <p class="apartments__price">6 630 500 <span class="apartments__price-p">₽</span></p>
                 </div>
               </div>
@@ -73,9 +75,11 @@
               <div class="apartments__flat-description">
                 <h2 class="apartments__flat-name">3-комнатная №105</h2>
                 <div class="apartments__flat-info">
-                  <p class="apartments__area">63,2 <span class="apartments__area-m">м²</span></p>
-                  <p class="apartments__floor-number">2</p>
-                  <p class="apartments__floors">из 17 <span class="apartments__floors-text">этаж</span></p>
+                  <p class="apartments__area">63,2 м²</p>
+                  <p class="apartments__floors">
+                    <span class="apartments__floor-number">2</span>
+                    <span class="apartments__floors-text"> из 17 <span class="apartments__floor">этаж</span></span>
+                  </p>
                   <p class="apartments__price">6 650 759 <span class="apartments__price-p">₽</span></p>
                 </div>
               </div>
@@ -90,9 +94,11 @@
               <div class="apartments__flat-description">
                 <h2 class="apartments__flat-name">3-комнатная №106</h2>
                 <div class="apartments__flat-info">
-                  <p class="apartments__area">63,2 <span class="apartments__area-m">м²</span></p>
-                  <p class="apartments__floor-number">3</p>
-                  <p class="apartments__floors">из 17 <span class="apartments__floors-text">этаж</span></p>
+                  <p class="apartments__area">63,2 м²</p>
+                  <p class="apartments__floors">
+                    <span class="apartments__floor-number">3</span>
+                    <span class="apartments__floors-text"> из 17 <span class="apartments__floor">этаж</span></span>
+                  </p>
                   <p class="apartments__price">6 650 759 <span class="apartments__price-p">₽</span></p>
                 </div>
               </div>
@@ -107,9 +113,11 @@
               <div class="apartments__flat-description">
                 <h2 class="apartments__flat-name">3-комнатная №107</h2>
                 <div class="apartments__flat-info">
-                  <p class="apartments__area">63,6 <span class="apartments__area-m">м²</span></p>
-                  <p class="apartments__floor-number">4</p>
-                  <p class="apartments__floors">из 17 <span class="apartments__floors-text">этаж</span></p>
+                  <p class="apartments__area">63,6 м²</p>
+                  <p class="apartments__floors">
+                    <span class="apartments__floor-number">4</span>
+                    <span class="apartments__floors-text"> из 17 <span class="apartments__floor">этаж</span></span>
+                  </p>
                   <p class="apartments__price">6 671 314 <span class="apartments__price-p">₽</span></p>
                 </div>
               </div>
@@ -125,8 +133,10 @@
                 <h2 class="apartments__flat-name">3-комнатная №108</h2>
                 <div class="apartments__flat-info">
                   <p class="apartments__area">63,1 м²</p>
-                  <p class="apartments__floor-number">5</p>
-                  <p class="apartments__floors">из 17 <span class="apartments__floors-text">этаж</span></p>
+                  <p class="apartments__floors">
+                    <span class="apartments__floor-number">5</span>
+                    <span class="apartments__floors-text"> из 17 <span class="apartments__floor">этаж</span></span>
+                  </p>
                   <p class="apartments__price">6 679 554 <span class="apartments__price-p">₽</span></p>
                 </div>
               </div>
@@ -140,39 +150,48 @@
         <button class="apartments__show-more">Загрузить еще</button>
       </section>
 
-      <section class="slider">
+      <section class="filters">
         <h2 class="visually-hidden">Сортировка квартир</h2>
-        <div class="slider__wrapper">
-          <div class="slider__buttons-wrapper">
-            <button class="slider__buttons">1к</button>
-            <button class="slider__buttons">2к</button>
-            <button class="slider__buttons">3к</button>
-            <button class="slider__buttons" disabled>4к</button>
+        <div class="filters__wrapper">
+          <div class="filters__filter filters__buttons-wrapper">
+            <button class="filters__buttons">1к</button>
+            <button class="filters__buttons">2к</button>
+            <button class="filters__buttons">3к</button>
+            <button class="filters__buttons" disabled>4к</button>
           </div>
-          <div class="slider__price">
-            <p class="slider__price-header">Стомость квартиры, ₽</p>
-            <div class="slider__value">
-              <p class="slider__from">от</p>
-              <p class="slider__to">до</p>
+          <div class="filters__filter filters__price">
+            <p class="filters__price-header">Стоимость квартиры, ₽</p>
+            <div class="filters__value">
+              <p class="filters__from">от <span class="filters__from-value"></span></p>
+              <p class="filters__to">до <span class="filters__to-value"></span></p>
             </div>
+            <div class="filters__price-slider"></div>
           </div>
 
-          <div class="slider__area">
-            <p class="slider__area-header">Площадь, м²</p>
-            <div class="slider__value">
-              <p class="slider__from">от</p>
-              <p class="slider__to">до</p>
+          <div class="filters__filter filters__area">
+            <p class="filters__area-header">Площадь, м²</p>
+            <div class="filters__value">
+              <p class="filters__from">от <span class="filters__from-value"></span></p>
+              <p class="filters__to">до <span class="filters__to-value"></span></p>
             </div>
+            <div class="filters__area-slider"></div>
+          </div>
+
+          <div class="filters__reset-wrapper">
+            <button class="filters__reset">Сбросить параметры <span class="filters__cross">x</span> </button>
           </div>
         </div>
       </section>
 
-      <div class="scroll"></div>
-    </div>
+      <div class="page-main__scroll-top">
+        <img class="page-main__scroll-img" src="img/top.svg" width="10" height="20" alt="Наверх"></div>
+      </div>
   </main>
 
   <script src="./js/nouislider.min.js"></script>
-  <script src="./js/main.min.js"></script>
+  <script src="./js/show-more.min.js"></script>
+  <script src="./js/slider.min.js"></script>
+  <script src="./js/scroll-top.min.js"></script>
 
 </body>
 
