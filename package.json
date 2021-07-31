@@ -40,6 +40,7 @@
     "readable-stream": "^3.6.0"
   },
   "dependencies": {
+    "gulp": "^4.0.2",
     "nouislider": "^15.2.0"
   }
 }
